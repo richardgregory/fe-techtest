@@ -1,5 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './GridItem.css';
+
+const propTypes = {
+    number: PropTypes.number.isRequired,
+    active: PropTypes.bool,
+    onClick: PropTypes.func.isRequired
+}
 
 const GridItem = ({ number, active, onClick }) => (
     <div className="GridItem">
@@ -11,5 +18,7 @@ const GridItem = ({ number, active, onClick }) => (
         </button>
     </div>  
 )
+
+GridItem.propTypes = propTypes
 
 export default GridItem;

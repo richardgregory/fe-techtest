@@ -79,21 +79,19 @@ npm run build
 npm start
 ```
 
-#### Reasoning
-
 #### React
 
-I decided to use React as it provides a way to easily manage state within the application, which is required to track the active number which has been clicked. It's also requires minimal setup, and is simple to test. 
+I decided to use React as it provides a way to easily manage state within the application. In addition, as we're rendering a number of elements which change state, using React means the DOM is updated in the most efficient way through reconcilliation. React also requires minimal setup, and is simple to test. 
 
 #### Testing
 
-I've used the approach pioneered by React Testing Library, so have tested the application from the top level e.g. the `Grid` component. This tests all underlying functionality, as it renders the component hierarchy. I haven't unit tested the functions or children components, as they are tested implicity through the `Grid` component tests. If these methods or components were to be used outside of this context (e.g. in multiple places) it would probably be beneficial to unit test them.
+I've used the approach pioneered by React Testing Library, so have tested the application from the top level e.g. the `Grid` component. This tests all underlying functionality, as it renders the component hierarchy. I haven't unit tested the functions or children components, as they are tested implicity through the `Grid` component tests. If these methods or components were to be used outside of this context (e.g. in multiple places), it may be beneficial to unit test them.
 
-I've also used testIds to target elements, as class names are likely to change more frequently and could cause tests to become brittle. 
+I've also used data attributes to target elements, as class names are likely to change more frequently and could cause tests to become brittle. 
 
-#### Perfomance
+#### Performance
 
-The method to create the grid items e.g. `getGrid` is called on every render. If this were to become a perfomance bottleneck it could be wrapped in the `useMemo` hook, so it's only called on the first render. 
+The method to create the grid items e.g. `getGrid` is called on every render. If this were to become a perfomance bottleneck it could be wrapped in the `useMemo` hook, so it's only called on the first render.
 
 
 
