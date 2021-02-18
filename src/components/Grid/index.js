@@ -5,8 +5,8 @@ import './Grid.css';
 const getGrid = (limit) => Array(limit).fill().map((_, index) => index + 1);
 const isMultiple = (multiple) => (value) => value % multiple === 0;
 
-const Grid = () => {
-    const gridNumbers = getGrid(144);
+const Grid = ({ limit = 144 }) => {
+    const gridNumbers = getGrid(limit);
     const [activeNumber, setActiveNumber] = useState();
     const [multiples, setMultiples] = useState([]);
 
@@ -22,7 +22,7 @@ const Grid = () => {
     }
     
     return (
-        <div className="Grid">
+        <div className="Grid" data-testid="grid">
             {gridNumbers.map((value) => (
                 <GridItem  
                     key={value} 
