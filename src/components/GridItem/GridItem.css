@@ -9,21 +9,16 @@
     margin: 5px;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 376px) {
     .GridItem {
         width: calc(100% / 2 - 10px)
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .GridItem {
         width: calc(100% / 3 - 10px)
     }
-}
-
-.GridItem--active {
-    border-color: red;
-    color: red;
 }
 
 .GridItem__button {
@@ -33,4 +28,9 @@
    font-size: 30px;
    border: 0;
    padding: 0;
+   cursor: pointer;
+}
+
+.GridItem__button--active {
+    color: red;
 }
